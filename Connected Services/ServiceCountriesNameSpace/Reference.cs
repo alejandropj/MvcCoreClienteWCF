@@ -9,6 +9,7 @@
 
 namespace ServiceCountriesNameSpace
 {
+    using System;
     using System.Runtime.Serialization;
     
     
@@ -882,6 +883,11 @@ namespace ServiceCountriesNameSpace
         public ListOfCountryNamesByNameResponse(ServiceCountriesNameSpace.ListOfCountryNamesByNameResponseBody Body)
         {
             this.Body = Body;
+        }
+
+        public static implicit operator ListOfCountryNamesByNameResponse(ListOfCountryNamesByCodeResponse v)
+        {
+            throw new NotImplementedException();
         }
     }
     
