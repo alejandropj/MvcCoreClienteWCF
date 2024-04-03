@@ -1,0 +1,35 @@
+﻿@using ServiceReferenceEscenas
+@model ServiceReferenceEscenas.Escena[]
+
+<h1>Escenas Azure WCF Service</h1>
+
+<form method="post">
+    <label>Introduzca Id Pelicula</label>
+    <input type="text" name="idpeli" class="form-control" />
+    <button class="btn btn-info">
+        Buscar escenas película
+    </button>
+</form>
+
+@foreach(var escena in Model)
+{
+    <div class="card" style="width:18rem;">
+        <img src="@escena.Imagen" class="card-img-top" />
+        <div class="card-body">
+            <h5 class="card-title">@escena.TituloEscena</h5>
+            <p class="card-text">@escena.Descripcion</p>
+        </div>
+    </div>
+}
+
+@if (ViewData["DATOS"] != null)
+{
+    Escena escena = ViewData["DATOS"] as Escena;
+    <div class="card" style="width:18rem;">
+        <img src="@escena.Imagen" class="card-img-top" />
+        <div class="card-body">
+            <h5 class="card-title">@escena.TituloEscena</h5>
+            <p class="card-text">@escena.Descripcion</p>
+        </div>
+    </div>
+}
